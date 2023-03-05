@@ -35,6 +35,9 @@ public class Post implements Serializable {
     private Date updatedAt = new Date();
     private List<Comment> comments;
 
+    public Post() {
+    }
+
     public Post(Integer id, String title, String postUrl, String username, int voteCount, Integer userId, Date postedAt, Date updatedAt, List<Comment> comments) {
         this.id = id;
         this.title = title;
