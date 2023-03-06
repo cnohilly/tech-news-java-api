@@ -24,19 +24,20 @@
       <input type="text" th:field="*{title}"/>
       <span th:text="${#strings.replace(post.postUrl,'http://','')}"></span>
     </div>
-    <div th:if="${post.voteCount == 1}" class="meta">
-      [[${post.voteCount}]] point by [[${post.userName}]] on
+    <div class="meta">
+      [[${post.voteCount}]]
+      <span th:if="${post.voteCount == 1}"> point </span>
+      <span th:unless="${post.voteCount == 1}"> points </span>
+      by [[${post.username}]] on
       <span th:text="${#dates.format(post.postedAt, 'MM-dd-YY')}"></span>
-      |
-      <a th:href="@{/post/{id}(id=${post.id})}" th:if="${post.comments.size() == 1}">[[${post.comments.size()}]] comment</a>
-      <a th:href="@{/post/{id}(id=${post.id})}" th:unless="${post.comments.size() == 1}">[[${post.comments.size()}]] comments</a>
-    </div>
-    <div th:unless="${post.voteCount == 1}" class="meta">
-      [[${post.voteCount}]] points by [[${post.userName}]] on
-      <span th:text="${#dates.format(post.postedAt, 'MM-dd-YY')}"></span>
-      |
-      <a th:href="@{/post/{id}(id=${post.id})}" th:if="${post.comments.size() == 1}">[[${post.comments.size()}]] comment</a>
-      <a th:href="@{/post/{id}(id=${post.id})}" th:unless="${post.comments.size() == 1}">[[${post.comments.size()}]] comments</a>
+      <span th:if="${post.comments != null}">
+        <a th:href="@{/post/{id}(id=${post.id})}" th:if="${post.comments.size() == 1}">[[${post.comments.size()}]] comment</a>
+        <a th:href="@{/post/{id}(id=${post.id})}" th:unless="${post.comments.size() == 1}">[[${post.comments.size()}]] comments</a>
+      </span>
+       |
+      <span th:unless="${post.comments != null}">
+        0 comments
+      </span>
     </div>
     <button type="submit">Edit post title</button>
     <button type="button" class="delete-post-btn">Delete post</button>
