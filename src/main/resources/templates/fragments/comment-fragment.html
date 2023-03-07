@@ -10,7 +10,7 @@
 
 <section th:each="comment : ${commentList}" class="comment" th:fragment="comment-fragment">
   <div class="meta">
-    [[${post.userName}]] on
+    [[${post.username}]] on
     <span th:text="${#dates.format(post.postedAt, 'MM-dd-YY')}"></span>
   </div>
   <div class="text">
