@@ -21,20 +21,10 @@ a:hover {
   color: #3486eb;
 }
 
-button {
-  background-color: #225ca3;
-  border: 0;
-  padding: 1%;
-  color: white;
-  font-weight: bold;
-  transition: background-color .1s;
-  cursor: pointer;
-  border-radius: 5px;
+.post-ol {
+    list-style: none;
 }
 
-button:hover {
-  background-color: #3486eb;
-}
 
 .post-list {
   margin: 0;
@@ -149,10 +139,11 @@ main {
 .comment {
   padding: 1%;
   margin-bottom: 1%;
+  background-color: #6c757d;
 }
 
 .comment:nth-child(odd) {
-  background-color: #fff5eb;
+    background-color: #4D546F;
 }
 
 .comment .meta {
@@ -170,7 +161,6 @@ main {
 }
 
 .flash-message {
-  background-color: #ffb6c1;
   color: red;
   text-align: center;
 }
@@ -181,4 +171,8 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 110%;
+}
+
+.vertical-line {
+    border-left: 1px solid black;
 }

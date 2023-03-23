@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<section th:each="comment : ${commentList}" class="comment" th:fragment="comment-fragment">
+<section th:each="comment : ${commentList}" class="comment rounded" th:fragment="comment-fragment">
   <div class="meta">
     [[${post.username}]] on
     <span th:text="${#dates.format(post.postedAt, 'MM-dd-YY')}"></span>
