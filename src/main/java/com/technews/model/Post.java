@@ -6,6 +6,7 @@ import groovyjarjarantlr4.v4.runtime.misc.NotNull;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,6 +22,7 @@ public class Post implements Serializable {
     private Integer id;
     private String title;
     private String postUrl;
+    private String hostUrl;
     @Transient
     private String username;
     @Transient
@@ -51,6 +53,8 @@ public class Post implements Serializable {
         this.postedAt = postedAt;
         this.updatedAt = updatedAt;
         this.comments = comments;
+
+
     }
 
     @Override
@@ -99,6 +103,10 @@ public class Post implements Serializable {
 
     public String getPostUrl() {
         return postUrl;
+    }
+
+    public String getHostUrl() {
+        return hostUrl;
     }
 
     public void setPostUrl(String postUrl) {
