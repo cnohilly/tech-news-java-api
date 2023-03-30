@@ -8,24 +8,29 @@
 
 </head>
 <body>
-<article class="post" th:fragment="post-fragment">
-    <div class="title">
-        <a th:href="@{ ${post.postUrl} }" target="_blank">[[${post.title}]]</a>
-        <span class="url-text">
-            [[${post.postUrl}]]
-        </span>
-
-        <div class="meta">
-            [[${post.voteCount}]]
-            <span th:text="${post.voteCount == 1} ? ' point ' : ' points '"></span>
+<article class="post d-flex flex-column" th:fragment="post-fragment">
+    <div class="title d-flex flex-row justify-content-between">
+        <div>
+            <a class="fs-4" th:href="@{ ${post.postUrl} }" target="_blank">[[${post.title}]]</a>
+            <span class="url-text">
+                [[${post.postUrl}]]
+            </span>
+        </div>
+        <div>
             by [[${post.username}]] on
             <span th:text="${#dates.format(post.postedAt, 'MM-dd-YY')}"></span>
-            |
+        </div>
+    </div>
+    <div class="meta d-flex flex-row justify-content-between">
+        <div>
+            [[${post.voteCount}]]
+            <span th:text="${post.voteCount == 1} ? ' point ' : ' points '"></span>
+         </div>
+        <div>
             <a th:href="@{/post/{id}(id=${post.id})}">
                 [[${post.comments.size()}]][[${post.comments.size() == 1} ? ' comment ' : ' comments ']]
             </a>
-        </div>
-
+       </div>
     </div>
 </article>
 

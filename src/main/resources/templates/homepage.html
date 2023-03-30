@@ -5,8 +5,8 @@
 </head>
 <body>
 <div layout:fragment="content">
-  <ol class="post-ol">
-    <li th:each="post : ${postList}" class="post-list">
+  <ol class="post-ol d-flex flex-column justify-content-center align-items-center">
+    <li class="post-list d-flex flex-column bg-secondary m-3 p-2 rounded" style="--bs-bg-opacity: .75;" th:each="post : ${postList}">
       <div th:insert="fragments/post-fragment :: post-fragment"></div>
     </li>
   </ol>
