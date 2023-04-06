@@ -181,7 +181,13 @@ footer {
 }
 
 .vertical-line {
-    border-left: 1px solid black;
+    width: 1px;
+    background: black;
+}
+
+.horizontal-line {
+    height: 1px;
+    background: black;
 }
 
 

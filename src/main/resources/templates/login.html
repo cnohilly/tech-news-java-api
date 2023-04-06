@@ -16,7 +16,7 @@
         <h3 class="my-auto">[[${notice}]]</h3>
       </div>
     </div>
-    <div class="card-body d-flex flex-row justify-content-around align-items-center">
+    <div class="card-body d-flex flex-column flex-md-row justify-content-around align-items-center">
       <form action="#" th:action="@{/users/login}" th:object="${user}" method="post" class="login-form">
         <h2 class="mb-3">Login</h2>
         <div class="form-group mb-2">
@@ -31,7 +31,8 @@
           <button class="btn btn-primary w-100" type="submit">Login</button>
         </div>
       </form>
-      <div class="vertical-line align-self-stretch"></div>
+      <div class="vertical-line align-self-stretch d-none d-md-block m-4"></div>
+      <div class="horizontal-line align-self-stretch d-md-none m-4"></div>
       <form action="#" th:action="@{/users}" th:object="${user}" method="post" class="signup-form">
         <h2>Sign Up</h2>
         <div class="form-group mb-2">
@@ -47,7 +48,7 @@
           <input type="password" class="form-control" id="passwordInputSignup" placeholder="Password" th:field="*{password}"/>
         </div>
         <div>
-          <button class="btn btn-primary w-100" type="submit">Sign Up</button>
+          <button class="btn btn-warning text-dark w-100" type="submit">Sign Up</button>
         </div>
       </form>
     </div>
