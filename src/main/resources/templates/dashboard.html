@@ -33,9 +33,11 @@
   <section th:if="${postList.size() > 0}">
     <h2>Your Posts</h2>
     <ol class="post-ol d-flex flex-column">
-      <li class="post-list d-flex flex-column bg-secondary m-3 p-2 rounded" style="--bs-bg-opacity: .75;" th:each="post : ${postList}">
-        <div th:insert="fragments/post-fragment :: post-fragment"></div>
-        <a th:href="@{/dashboard/edit/{id}(id=${post.id})}" class="edit-link">Edit post</a>
+      <li class="post-list d-flex flex-column flex-md-row m-3" th:each="post : ${postList}">
+        <div class="flex-grow-1" th:insert="fragments/post-fragment :: post-fragment"></div>
+        <a th:href="@{/dashboard/edit/{id}(id=${post.id})}" class="align-self-stretch m-1 flex-grow-1 flex-md-grow-0">
+          <button class="btn btn-primary h-100 w-100"> Edit post </button>
+        </a>
       </li>
     </ol>
   </section>

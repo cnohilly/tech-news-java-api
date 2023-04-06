@@ -14,18 +14,19 @@
     <h3>[[${notice}]]</h3>
   </div>
 
-  <div th:insert="fragments/post-fragment :: post-fragment"></div>
+  <div class="mb-5" th:insert="fragments/post-fragment :: post-fragment"></div>
 
 
   <form th:if="${loggedIn}" action="#" th:action="@{/comments}" th:object="${comment}" method="post" class="comment-form">
     <div>
       <input type="hidden" th:value="${post.id}" name="postId"/>
-      <textarea name="comment-body" th:field="*{commentText}"></textarea>
+      <textarea name="comment-body" th:field="*{commentText}"
+      placeholder="Type your comment here..."></textarea>
     </div>
 
     <div>
-      <button type="submit">add comment</button>
-      <button type="button" class="upvote-btn">upvote</button>
+      <button class="btn btn-primary" type="submit">add comment</button>
+      <button type="button" class="btn btn-success">upvote</button>
     </div>
   </form>
 

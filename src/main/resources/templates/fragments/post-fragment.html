@@ -8,8 +8,8 @@
 
 </head>
 <body>
-<article class="post d-flex flex-column" th:fragment="post-fragment">
-    <div class="title d-flex flex-row justify-content-between">
+<article class="post d-flex flex-column bg-secondary p-2 rounded" style="--bs-bg-opacity: .75;" th:fragment="post-fragment">
+    <div class="title d-flex flex-row justify-content-between flex-wrap">
         <div>
             <a class="fs-4" th:href="@{ ${post.postUrl} }" target="_blank">[[${post.title}]]</a>
             <span class="url-text">
