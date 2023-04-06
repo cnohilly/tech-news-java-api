@@ -35,19 +35,20 @@
       </a>
     </div>
 
-    <button type="submit">Edit post title</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <button class="btn btn-info" type="submit">Edit Post Title</button>
+    <button class="btn btn-danger" type="button">Delete Post</button>
   </form>
 
 
   <form action="#" th:action="@{/comments/edit}" th:object="${comment}" method="post" class="comment-form">
     <div>
       <input type="hidden" th:value="${post.id}" name="postId"/>
-      <textarea name="comment-body" th:field="*{commentText}"></textarea>
+      <textarea name="comment-body" th:field="*{commentText}"
+      placeholder="Type your comment here..."></textarea>
     </div>
 
     <div>
-      <button type="submit">add comment</button>
+      <button class="btn btn-primary" type="submit">Add Comment</button>
     </div>
   </form>
 

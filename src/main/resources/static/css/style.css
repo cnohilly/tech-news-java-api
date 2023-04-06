@@ -44,7 +44,7 @@ textarea:focus, input:focus {
 }
 
 textarea {
-  min-width: 40%;
+  min-width: 50%;
   min-height: 100px;
 }
 
@@ -98,14 +98,6 @@ main {
 .btn-no-style:hover {
   background: none;
   color: #3486eb;
-}
-
-.delete-post-btn {
-  background-color: #d41414;
-}
-
-.delete-post-btn:hover {
-  background-color: #ff643d;
 }
 
 .post {
